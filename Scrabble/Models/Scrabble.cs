@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Scrabble.Models
 {
   public class ScrabbleGenerator
   {
       private string _word;
-      private string _wordChars;
+      private char[] _wordChars;
 
       public ScrabbleGenerator(string word)
       {
@@ -16,9 +17,10 @@ namespace Scrabble.Models
       {
           return _word;
       }
-      public string BreakWord()
+      public char[] BreakWord()
       {
-          return _word;
+          _wordChars = _word.ToCharArray();
+          return _wordChars;
       }
   }
 }
