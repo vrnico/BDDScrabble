@@ -18,6 +18,16 @@ namespace Scrabble.Tests
         ViewResult result = indexView as ViewResult;
         //assert
         Assert.IsInstanceOfType(result, typeof(ViewResult));
-     } 
+     }
+     [TestMethod]
+      public void Index_ReturnsString_True()
+      {
+        //arrange
+       ViewResult indexView = new HomeController().Index() as ViewResult;
+        //act
+        var result = indexView.ViewData.Model;
+        //assert
+        Assert.IsInstanceOfType(result, typeof(string));
+      }
   }
 }
