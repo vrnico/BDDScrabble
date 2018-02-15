@@ -18,5 +18,17 @@ namespace Scrabble.Tests
         //assert
         Assert.AreEqual(testInput, testString);
     }
+
+    [TestMethod]
+    public void BreakWordIntoChars_ReturnCharArray()
+    {
+        //arrange
+        ScrabbleGenerator newScrabbleGenerator = new ScrabbleGenerator("word");
+        char[] testInput = {'w','o','r','d'};
+        //act
+        string testString = newScrabbleGenerator.BreakWord();
+        //assert
+        Assert.AreEqual(testString, testInput);
+    }
   }
 }

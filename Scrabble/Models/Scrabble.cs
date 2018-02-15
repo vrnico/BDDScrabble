@@ -5,6 +5,7 @@ namespace Scrabble.Models
   public class ScrabbleGenerator
   {
       private string _word;
+      private string _wordChars;
 
       public ScrabbleGenerator(string word)
       {
@@ -12,6 +13,10 @@ namespace Scrabble.Models
       }
 
       public string GetInput()
+      {
+          return _word;
+      }
+      public string BreakWord()
       {
           return _word;
       }
