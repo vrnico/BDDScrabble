@@ -28,7 +28,22 @@ namespace Scrabble.Tests
         //act
         char[] testString = newScrabbleGenerator.BreakWord();
         //assert
-        Assert.AreEqual(testString[0], testInput[0]);
+        CollectionAssert.AreEqual(testString, testInput);
+    }
+
+    [TestMethod]
+    public void AssignValueToChars_ReturnValue()
+    {
+        //arrange
+        ScrabbleGenerator newScrabbleGenerator = new ScrabbleGenerator("word");
+        int testValue = 8;
+
+        //act
+        char[] testString = newScrabbleGenerator.BreakWord();
+        int wordValue = newScrabbleGenerator.WordCharVal();
+
+        //assert
+        Assert.AreEqual(testValue, wordValue);
     }
   }
 }
