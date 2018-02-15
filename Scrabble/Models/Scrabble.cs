@@ -13,7 +13,7 @@ namespace Scrabble.Models
 
       public string GetInput()
       {
-          return "fuck";
+          return _word;
       }
   }
 }
